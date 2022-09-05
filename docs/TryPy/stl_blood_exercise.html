@@ -109,12 +109,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#st.-louis-blood-data" id="toc-st.-louis-blood-data" class="nav-link active" data-scroll-target="#st.-louis-blood-data">St.&nbsp;Louis Blood Data</a>
+  <li><a href="#part-0.-setup-steps" id="toc-part-0.-setup-steps" class="nav-link active" data-scroll-target="#part-0.-setup-steps">Part 0. Setup Steps</a>
   <ul class="collapse">
-  <li><a href="#get-the-data" id="toc-get-the-data" class="nav-link" data-scroll-target="#get-the-data">Get the data</a></li>
-  <li><a href="#explore-the-data" id="toc-explore-the-data" class="nav-link" data-scroll-target="#explore-the-data">Explore the data</a></li>
-  <li><a href="#create-a-scatterplot" id="toc-create-a-scatterplot" class="nav-link" data-scroll-target="#create-a-scatterplot">Create a scatterplot</a></li>
-  <li><a href="#create-a-histogram" id="toc-create-a-histogram" class="nav-link" data-scroll-target="#create-a-histogram">Create a histogram</a></li>
+  <li><a href="#part-1---get-the-data" id="toc-part-1---get-the-data" class="nav-link" data-scroll-target="#part-1---get-the-data">Part 1 - Get the data</a></li>
+  <li><a href="#part-2---explore-the-data" id="toc-part-2---explore-the-data" class="nav-link" data-scroll-target="#part-2---explore-the-data">Part 2 - Explore the data</a></li>
+  <li><a href="#part-3---create-a-scatterplot" id="toc-part-3---create-a-scatterplot" class="nav-link" data-scroll-target="#part-3---create-a-scatterplot">Part 3 - Create a scatterplot</a></li>
+  <li><a href="#part-4---create-a-histogram" id="toc-part-4---create-a-histogram" class="nav-link" data-scroll-target="#part-4---create-a-histogram">Part 4 - Create a histogram</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -139,10 +139,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="st.-louis-blood-data" class="level2">
-<h2 class="anchored" data-anchor-id="st.-louis-blood-data">St.&nbsp;Louis Blood Data</h2>
-<section id="get-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="get-the-data">Get the data</h3>
+<section id="part-0.-setup-steps" class="level2">
+<h2 class="anchored" data-anchor-id="part-0.-setup-steps">Part 0. Setup Steps</h2>
+<ul>
+<li>Create a repo on GitHub named <code>eds217-trypy-01</code></li>
+<li>Clone to create a version-controlled project</li>
+<li>Create some subfolder infrastructure (docs, data)</li>
+<li>Create a new quarto in RStudio called <code>eds-217-trypy.qmd</code>. If working on your local machine, make sure to associate the quarto doc with the <code>eds-217</code> environment.</li>
+</ul>
+<section id="part-1---get-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="part-1---get-the-data">Part 1 - Get the data</h3>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co">"""</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">Create a new variable containing </span></span>
@@ -160,8 +166,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>stl_lead <span class="op">=</span> pd.read_csv(url)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Read more about the data <a href="https://github.com/slu-soc1120/STL_HEALTH_Lead">here</a>.</p>
 </section>
-<section id="explore-the-data" class="level3">
-<h3 class="anchored" data-anchor-id="explore-the-data">Explore the data</h3>
+<section id="part-2---explore-the-data" class="level3">
+<h3 class="anchored" data-anchor-id="part-2---explore-the-data">Part 2 - Explore the data</h3>
 <p>Create a new notebook, or this notebook:</p>
 <ul>
 <li>Create a code cell that imports the <code>numpy</code> and <code>pandas</code> packages and run the cell to import the packages.</li>
@@ -171,27 +177,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Hint: <code>df['new_col'] = df['col_a'] / df['col_b']</code> will create a new column <code>new_col</code> that contains the value of <code>col_a / col_b</code></p>
 </section>
-<section id="create-a-scatterplot" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-scatterplot">Create a scatterplot</h3>
+<section id="part-3---create-a-scatterplot" class="level3">
+<h3 class="anchored" data-anchor-id="part-3---create-a-scatterplot">Part 3 - Create a scatterplot</h3>
 <ul>
 <li>Import matplotlib (<code>import matplotlib.pyplot as plt</code>)</li>
 <li>Create a scatterplot graph of the percentage of children in each census tract with elevated blood lead levels (<code>pctElevated</code>) versus the percent of each census tract identifying as white.</li>
 </ul>
 </section>
-<section id="create-a-histogram" class="level3">
-<h3 class="anchored" data-anchor-id="create-a-histogram">Create a histogram</h3>
+<section id="part-4---create-a-histogram" class="level3">
+<h3 class="anchored" data-anchor-id="part-4---create-a-histogram">Part 4 - Create a histogram</h3>
 <ul>
 <li>Create a histogram of only the <code>pctElevated</code> column in the data frame</li>
 <li>Customize the fill, color, and size aesthetics - test some stuff! Feel free to make it awful.</li>
 </ul>
-<div class="cell">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> stl_lead[<span class="st">'pctElevated'</span>].hist(</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    color<span class="op">=</span><span class="st">'green'</span>,</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
 </section>
 </section>
 
