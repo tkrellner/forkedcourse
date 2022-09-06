@@ -23,28 +23,70 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="conditionals_and_loops_files/libs/clipboard/clipboard.min.js"></script>
-<script src="conditionals_and_loops_files/libs/quarto-html/quarto.js"></script>
-<script src="conditionals_and_loops_files/libs/quarto-html/popper.min.js"></script>
-<script src="conditionals_and_loops_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="conditionals_and_loops_files/libs/quarto-html/anchor.min.js"></script>
-<link href="conditionals_and_loops_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="conditionals_and_loops_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="conditionals_and_loops_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="conditionals_and_loops_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="conditionals_and_loops_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
 
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="styles/activities.css">
 </head>
 
-<body>
+<body class="floating">
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
-<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
    
   <ul>
   <li><a href="#part-0.-setup-steps" id="toc-part-0.-setup-steps" class="nav-link active" data-scroll-target="#part-0.-setup-steps">Part 0. Setup Steps</a></li>
@@ -60,9 +102,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#end-activities" id="toc-end-activities" class="nav-link" data-scroll-target="#end-activities">END activities</a></li>
   </ul>
 </nav>
-</div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-</div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
 <main class="content" id="quarto-document-content">
 <hr>
 <h4 class="anchored"> <a href="TrPy.html">Return to TryPy List</a></h4>
@@ -100,7 +144,7 @@ ul.task-list li input[type="checkbox"] {
 <h3 class="anchored" data-anchor-id="conditional-statements">Conditional statements</h3>
 <section id="task-1" class="level4">
 <h4 class="anchored" data-anchor-id="task-1">Task 1</h4>
-<p>Create an object called <code>pm2_5</code> with a value of 48 (representing Particulate Matter 2.5, an indicator for air quality, in <span class="math inline">\(\frac{\mu g}{m^3}\)</span> (see more about PM2.5 <a href="https://www3.epa.gov/region1/airquality/pm-aq-standards.html">here</a>).</p>
+<p>Create an object called <code>pm2_5</code> with a value of 48 (representing Particulate Matter 2.5, an indicator for air quality, in <span class="math inline">\frac{\mu g}{m^3}</span> (see more about PM2.5 <a href="https://www3.epa.gov/region1/airquality/pm-aq-standards.html">here</a>).</p>
 <p>Write an <code>if - else if - else</code> statement that returns “Low to moderate risk” if <code>pm2_5</code> (for Particulate Matter 2.5) is less than 100, “Unhealthy for sensitive groups” if PM 2.5 is 100 &lt;= pm2_5 &lt; 150, and “Health risk present” if PM 2.5 is &gt;= 150.</p>
 <p>Test by changing the value of your pm2_5 object and re-running your statement to check.</p>
 </section>
@@ -168,10 +212,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="end-activities" class="level2">
 <h2 class="anchored" data-anchor-id="end-activities">END activities</h2>
+
+
 </section>
 
-</main>
-<!-- /main column -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -1,0 +1,16 @@
+project:
+  title: "TryPy"
+  type: website
+  
+format:
+  html:
+    html-math-method: katex
+    code-fold: true
+    toc: true
+    toc-location: left
+    css: styles/activities.css
+    include-before-body: header.html
+
+
+
+
