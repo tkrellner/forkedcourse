@@ -134,11 +134,12 @@ ul.task-list li input[type="checkbox"] {
 <li>Create a repo on GitHub named <code>eds217-trypy-03</code></li>
 <li>Clone to create a version-controlled project</li>
 <li>Create some subfolder infrastructure (docs, data)</li>
+<li>Create a new python notebook.</li>
+<li>Complete all tasks for Part 1 in this .ipynb*</li>
 </ul>
 </section>
 <section id="part-1.-conditional-statements-for-loops" class="level2">
 <h2 class="anchored" data-anchor-id="part-1.-conditional-statements-for-loops">Part 1. Conditional statements &amp; for loops</h2>
-<p><em>Create a new Qmd document in your docs folder, saved as <code>conditionals_loops.qmd</code>. Complete all tasks for Part 1 in this .qmd.</em></p>
 <p><em>Complete each of the following in a separate code chunk.</em></p>
 <section id="conditional-statements" class="level3">
 <h3 class="anchored" data-anchor-id="conditional-statements">Conditional statements</h3>
@@ -189,14 +190,14 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="part-2.-real-data" class="level2">
 <h2 class="anchored" data-anchor-id="part-2.-real-data">Part 2. Real data</h2>
-<p><em>You will complete Part 3 in a separate .Rmd.</em></p>
+<p><em>You will complete Part 3 in a separate notebook</em></p>
 <p>Explore this <a href="https://portal.edirepository.org/nis/mapbrowse?packageid=knb-lter-arc.10341.5">data package</a> from EDI, which contains a “Data file describing the biogeochemistry of samples collected at various sites near Toolik Lake, North Slope of Alaska”. Familiarize yourself with the metadata (particularly, View full metadata &gt; expand ‘Data entities’ to learn more about the variables in the dataset).</p>
 <p><strong>Citation:</strong> Kling, G. 2016. Biogeochemistry data set for soil waters, streams, and lakes near Toolik on the North Slope of Alaska, 2011. ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/362c8eeac5cad9a45288cf1b0d617ba7</p>
 <ol type="1">
 <li><p>Download the CSV containing the Toolik biogeochemistry data</p></li>
 <li><p>Take a look at it - how are missing values stored? Keep that in mind.</p></li>
 <li><p>Drop the CSV into your data folder of your project</p></li>
-<li><p>Create a new qmd document, save in docs as <code>toolik_chem.qmd</code></p></li>
+<li><p>Create a new qmd document, save in docs as <code>toolik_chem.ipynb</code></p></li>
 <li><p>Import the <code>pandas</code> and <code>janitor</code> package in your setup code chunk.</p></li>
 <li><p>Read in the data as <code>toolik_biochem</code>. Remember, you’ll want to specify here how <code>NA</code> values are stored. Use the <code>clean_names()</code> function to convert all column names to lower case/underscore format.</p></li>
 <li><p>Create a subset of the data that contains only observations from the “Toolik Inlet” site, and that only contains the variables (columns) for pH, dissolved organic carbon (DOC), and total dissolved nitrogen (TDN). Store this subset as <code>inlet_biochem</code>. Make sure to LOOK AT the subset you’ve created.</p></li>
