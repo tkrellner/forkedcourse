@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>exercise1-0_helloworld</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="styles/activities.css">
+</head>
+
+<body class="floating">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#exercise-1.0-hello-world" id="toc-exercise-1.0-hello-world" class="nav-link active" data-scroll-target="#exercise-1.0-hello-world">Exercise 1.0: Hello, World!</a>
+  <ul class="collapse">
+  <li><a href="#instructions" id="toc-instructions" class="nav-link" data-scroll-target="#instructions">Instructions</a></li>
+  <li><a href="#introduction-to-python" id="toc-introduction-to-python" class="nav-link" data-scroll-target="#introduction-to-python">Introduction to Python</a>
+  <ul class="collapse">
+  <li><a href="#print-statements" id="toc-print-statements" class="nav-link" data-scroll-target="#print-statements">Print statements</a></li>
+  <li><a href="#user-input" id="toc-user-input" class="nav-link" data-scroll-target="#user-input">User input</a></li>
+  <li><a href="#comments" id="toc-comments" class="nav-link" data-scroll-target="#comments">Comments</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<hr>
+<h4 class="anchored"> <a href="index.html">Return to Course Home Page</a></h4>
+<hr>
+
+
+
+<p><a href="./Index.html">🏠 Index</a> | <a href="./Exercise1-1_Variables.html">➡️ Next Exercise</a> |</p>
+<section id="exercise-1.0-hello-world" class="level1">
+<h1>Exercise 1.0: Hello, World!</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Exercise1-0_HelloWorld_files/figure-html/Hello_mac-2.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Hello_mac-2.jpg</figcaption><p></p>
+</figure>
+</div>
+<p>Python is a general-purpose, open-source programming language with diverse capabilities. While it is often used for high-level applications and complex tasks, Python’s object-oriented structure and clean syntax make it straightforward to learn. Most updates to the Python API are robust to compatibility issues, there are two main versions of the language with significant differences: Python 2 and 3. In this course, we will be using Python 3.</p>
+<p>Running Python programs requires the Python interpreter, which is preinstalled on Mac and Linux systems, but must be downloaded on Windows machines. Python code can be generated in any text editor and executed in the terminal. Additionally, many programmers use interactive development environments or IDEs. An IDE is a graphical editor where code can be written and executed.</p>
+<p>In addition to Python scripts (.py files), many data scientists use Jupyter Notebooks (.ipynb files) for experimentation and visualization. While Notebooks are limited in their capabilities, they allow for external code execution, running on the Jupyter Server. For this reason, these exercises have been designed in Jupyter Notebook format, though you are encouraged to explore Python scripts as well.</p>
+<p>This first tutorial will briefly introduce a few basic Python features.</p>
+<p style="height:1pt">
+</p>
+<div class="boxhead1">
+<pre><code>Exercise 1.0 Topics</code></pre>
+</div>
+<div class="boxtext1">
+<ul class="a">
+<li>
+📌 Print statements
+</li>
+<li>
+📌 User input
+</li>
+<li>
+📌 Comments
+</li>
+</ul>
+</div>
+<hr style="border-top: 0.2px solid gray; margin-top: 12pt; margin-bottom: 0pt">
+
+<section id="instructions" class="level3">
+<h3 class="anchored" data-anchor-id="instructions">Instructions</h3>
+<p>Work through the exercise, writing code where indicated. To run a cell, click on the cell and press “Shift” + “Enter” or click the “Run” button in the toolbar at the top. Note: Do not restart the kernel and clear all outputs. If this happens, run the last cell in the notebook before proceeding.</p>
+<p style="color:#408000; font-weight: bold">
+🐍 &nbsp; &nbsp; This symbol designates an important note about Python structure, syntax, or another quirk.
+</p>
+<p style="color:#008C96; font-weight: bold">
+▶️ &nbsp; &nbsp; This symbol designates a cell with code to be run.
+</p>
+<p style="color:#008C96; font-weight: bold">
+✏️ &nbsp; &nbsp; This symbol designates a partially coded cell with an example.
+</p>
+<p style="color:#008C96; font-weight: bold">
+📚 &nbsp; &nbsp; This symbol designates a practice question.
+</p>
+<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px">
+
+</section>
+<section id="introduction-to-python" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-python">Introduction to Python</h2>
+<hr style="border-top: 0.2px solid gray; margin-top: 12px; margin-bottom: 1px">
+
+<section id="print-statements" class="level3">
+<h3 class="anchored" data-anchor-id="print-statements">Print statements</h3>
+<p>The most basic function in Python is the <code>print()</code> function, which simply prints out a line.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">'This is a print statement.'</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p style="font-family: Lucida Console, Courier, monospace; margin-left: 22pt; margin-top: 0pt; margin-bottom: 12pt">
+<span style="color: #A514F6; font-weight: bold"> &gt;&gt;&gt; </span> This is a print statement.
+</p>
+<div class="run">
+<pre><code>▶️ Run the cell below.</code></pre>
+</div>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">'This is a print statement.'</span> )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>This is a print statement.</code></pre>
+</div>
+</div>
+<div class="practice">
+<p>📚 Practice 1. In the following cell, use the <code>print()</code> command to print the line “Hello, World!”)</p>
+</div>
+<div class="cell" data-execution_count="14">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello World</code></pre>
+</div>
+</div>
+<hr style="border-top: 0.2px solid gray; margin-top: 12px; margin-bottom: 1px">
+
+</section>
+<section id="user-input" class="level3">
+<h3 class="anchored" data-anchor-id="user-input">User input</h3>
+<p>The <code>input()</code> command is an important Python function that can be used in a program to prompt for user input.</p>
+<div class="example">
+<p>✏️ Try it. Run the following cell to see how the <code>input()</code> function works, inputing your first name when prompted.</p>
+</div>
+<div class="cell" data-execution_count="15">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">'Me'</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">#name = input( 'What is your first name? ' )</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>( <span class="st">'My name is '</span> <span class="op">+</span> name <span class="op">+</span> <span class="st">'.'</span> )</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co">#print(name)</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>name <span class="op">=</span> <span class="st">"You"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>My name is Me.
+You</code></pre>
+</div>
+</div>
+<hr style="border-top: 0.2px solid gray; margin-top: 12px; margin-bottom: 1px">
+
+</section>
+<section id="comments" class="level3">
+<h3 class="anchored" data-anchor-id="comments">Comments</h3>
+<p>In programming, a <strong>comment</strong> is a piece of text that the computer ignores when running the program. Comments are usually used at the top of a program to provide a description of the program, name and information of the author, dependencies, etc., as well as throughout the script to explain lines of code. Commenting is a critical element of proper coding etiquette.</p>
+<p>There are two types of comments: <strong>in-line comments</strong> and <strong>block comments</strong>. In-line comments are used to provide context at the end of a line of code, while block comments come before a “block” or chunk of code.</p>
+<div class="python">
+<pre><code>🐍 &lt;b&gt;Note.&lt;/b&gt;
+In Python, there are two ways of writing comments. For in-line comments and most short comments, the &lt;span style="font-weight:bold"&gt; # &lt;/span&gt; character is used. For large block comments, such as those at the beginning of a file or function, three quotations &lt;span style="font-weight:bold"&gt;  '''  &lt;/span&gt; are used to enclose comments. Both single and double quotations are interpreted the same, as long as they are not used together.</code></pre>
+</div>
+<p>The following example is a function (a type of Python object we will cover later on) that uses both methods of commenting. As you can see, without the comments, it would be difficult to understand what the function does, what parameters it takes, and what the intermediate steps are to reach the end.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> homo_affine_matrix(p, p_prime):</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">'''</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Finds the unique homogeneous affine transformation that transforms a set of 3 points </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co">    from one coordinate system to that of a second set of points in 3-D space</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Parameters</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">    ----------</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">    p : array</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">        original set of points as a row vector: ((p1, p2, p3))</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">    p_prime : array</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="co">        Transformed points as a row vector: ((p1_prime, p2_prime, p3_prime))</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="co">    </span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="co">    Returns</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="co">    -------</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co">    array</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">        4 x 3 affine transformation matrix.</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">        </span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co">    Source: Adapted by B. Morgan from https://math.stackexchange.com/a/222170 (robjohn)</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">    '''</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Construct intermediate matrix</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a>    Q       <span class="op">=</span> p[<span class="dv">1</span>:]       <span class="op">-</span> p[<span class="dv">0</span>]</span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a>    Q_prime <span class="op">=</span> p_prime[<span class="dv">1</span>:] <span class="op">-</span> p_prime[<span class="dv">0</span>]</span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate rotation matrix</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a>    R <span class="op">=</span> np.dot(np.linalg.inv(np.row_stack((Q, np.cross(<span class="op">*</span>Q)))),</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a>               np.row_stack((Q_prime, np.cross(<span class="op">*</span>Q_prime))))</span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate translation vector</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>    t <span class="op">=</span> p_prime[<span class="dv">0</span>] <span class="op">-</span> np.dot(p[<span class="dv">0</span>], R)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Calculate affine transformation matrix</span></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.column_stack((np.row_stack((R, t)),</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>                            (<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">1</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><br> <br></p>
+<div class="run">
+<pre><code>▶️ Run the cell below.</code></pre>
+</div>
+<div class="cell" data-execution_count="24">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This comment will not be read by the computer.</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="op">+</span> <span class="dv">2</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="24">
+<pre><code>4</code></pre>
+</div>
+</div>
+<hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px">
+
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># IGNORE THIS CELL</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.core.display <span class="im">import</span> HTML</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> css_styling():</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>    styles <span class="op">=</span> <span class="bu">open</span>(<span class="st">"./styles/exercises.css"</span>, <span class="st">"r"</span>).read()</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> HTML(styles)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>css_styling()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<style>
+    div.run { 
+        border: 0.5px solid #008C96; 
+        padding: 10px; 
+        background-color: #b2dcdf; 
+        color:#006269; 
+        margin-top: 12px; 
+        font-weight: bold
+    }
+    div.example { 
+        border: 0.5px solid #008C96; 
+        padding: 10px; 
+        background-color: #b2dcdf; 
+        color:#006269; 
+        margin-top: 12px;
+        font-weight: bold
+    }
+    div.practice { 
+        border: 0.5px solid #008C96;  
+        padding: 10px;  
+        background-color: #b2dcdf;  
+        color:#006269; 
+        margin-top: 12px;
+        font-weight: bold
+    }
+    div.python { 
+        border: 0.5px solid #408000; 
+        padding: 10px; 
+        background-color: #cddfb4; 
+        color:#2c5900; 
+        margin-top: 12px
+    }
+    div.data { 
+        border: 0.5px solid #443823; 
+        padding: 10px; 
+        background-color: #ead8b9; 
+        color:#443823; 
+        margin-top: 12px
+    }
+    div.codeblock { 
+        border: 0.2px solid #808080;
+        padding: 10px; 
+        background-color: #DBDBDB; 
+        margin-top: 2px
+    }   
+    div.boxhead1 { 
+        border-radius: 4px 4px 0px 0px; 
+        padding: 6px; 
+        border: 0.5px solid #008C96; 
+        background-color: #b2dcdf; 
+        color:#006269; 
+        margin-top: 12px; 
+        font-size: 115%; 
+        font-weight: bold
+    }
+    div.boxtext1 { 
+        border-radius: 0px 0px 4px 4px; 
+        border: 0.5px solid #008C96; 
+        padding: 12pt; 
+        color:#006269 
+    }
+    div.boxhead2 {
+        border-radius: 4px 4px 0px 0px; 
+        padding: 6px; 
+        border: 0.5px solid #73AD21; 
+        background-color: #c7dea6; 
+        color:#486d15; 
+        margin-top: 12px; 
+        font-size: 115%; 
+        font-weight: bold
+    }
+    div.boxtext2 { 
+        border-radius: 0px 0px 4px 4px; 
+        border: 0.5px solid #73AD21; 
+        padding: 12pt; 
+        color:#486d15
+    }
+    div.boxhead3 {
+        border-radius: 4px 4px 0px 0px; 
+        padding: 6px; 
+        border: 0.5px solid #e66800; 
+        background-color: #f7d1b2; 
+        color:#cd5c00; 
+        margin-top: 12px; 
+        font-size: 115%; 
+        font-weight: bold
+    }
+    div.boxtext3 { 
+        border-radius: 0px 0px 4px 4px; 
+        border: 0.5px solid #e66800; 
+        padding: 12pt; 
+        color:#cd5c00
+    }
+    span.code {
+        font-family: Lucida Console, Courier, monospace;
+        font-weight: normal;
+    }
+    span.codeb {
+        font-family: Lucida Console, Courier, monospace;
+        font-weight: bold;
+    }
+    ol.num {
+        margin: 0pt;
+        margin-top: 12pt; 
+        margin-bottom: 2pt; 
+        margin-left: 4pt; 
+        padding-bottom: 4pt; 
+    }
+    ol.alpha {
+        list-style-type: lower-alpha;
+        margin: 0pt;
+        margin-left: 4pt;
+        margin-top: 2pt;
+        font-weight: bold
+    }
+    ul.a {
+        list-style-type: none; 
+        margin-left: -20pt;
+        font-weight: bold;
+    }
+
+    ul.b {
+        list-style-type: square; 
+        font-weight: normal; 
+        margin-left: 20pt; 
+        margin-top: 4pt; 
+        padding-bottom: 12pt;
+    }
+</style>
+</div>
+</div>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

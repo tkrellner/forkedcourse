@@ -1,6 +1,7 @@
 project:
   title: "TryPy"
   type: website
+  output-dir: .
   
 format:
   html:
