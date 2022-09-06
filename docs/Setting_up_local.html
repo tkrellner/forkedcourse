@@ -187,13 +187,17 @@ ul.task-list li input[type="checkbox"] {
 <section id="using-the-eds-217-environment." class="level2">
 <h2 class="anchored" data-anchor-id="using-the-eds-217-environment.">Using the <code>eds-217</code> environment.</h2>
 <p>The <code>conda</code> manager tool will keep track of all the different environments you have created, and the packages installed in each of them. At any time, you can inspect all of your installed environments and their libraries using the Anaconda Navigator, or using the <code>conda env list</code> command.</p>
-<p>When you are using an IDE you will often be given the opportunity to connect an environment with your code.</p>
-<p>In RStudio, this happens when you create a new <code>.qmd</code> file and associate it with a <code>jupyter</code> installation.</p>
-<p>In Visual Studio Code, you can select an environment when you first execute a <code>.ipynb</code> file or when you initiate an <code>IPython</code> interactive terminal.</p>
+<p>When you are using an IDE you will often be given the opportunity to connect an environment with your code. Before doing so, it is necessary to first activate the environment in a terminal (or PowerShell for Windows) and then execute a 1-time command to register the kernel.</p>
 <p>You can always activate an environment at a terminal prompt by using</p>
 <pre><code>&gt; conda activate &lt;environment_name&gt;</code></pre>
 <p>In the case of <code>eds-217</code>, you would use:</p>
 <pre><code>&gt; conda activate eds-217</code></pre>
+<p>To register your python environment with IDEs, you usually need to run the following command within the activated environment:</p>
+<pre><code>&gt; python -m ipykernel install --user --name=&lt;env_name&gt; --display-name "&lt;env_name"
+</code></pre>
+<p>This command will allow you to select the environment within Jupyter, as well as RStudio and Visual Studio Code.</p>
+<p>In RStudio, this happens when you create a new <code>.qmd</code> file and associate it with a <code>jupyter</code> installation.</p>
+<p>In Visual Studio Code, you can select an environment when you first execute a <code>.ipynb</code> file or when you initiate an <code>IPython</code> interactive terminal.</p>
 
 
 </section>
