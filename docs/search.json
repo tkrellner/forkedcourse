@@ -460,5 +460,54 @@
     "title": "",
     "section": "Loading functions and classes",
     "text": "Loading functions and classes\nIn the last practice cell, you probably noticed that your class definition is getting pretty large. While it’s nice to be able to edit this code easily in your notebook, once you have settled on a function or class definition, it is often helpful to move the definitions out of your notebook and just load them when you need them. Python uses the import function to load objects from external libraries and files.\n\nMoving your class definition to a new file\n\n📚  <b> Practice 6. </b> \nFollow the directions below to save your final <code>Temperature</code> class definition into a new file called <code>temperature.py</code>\n\n\nGo to the JupyterLab File menu and click New -> Text File\n\n\n\nCopy the entire Temperature class definition you created during Practice 5 and paste it into the text file.\nRename the text file temperature.py. You can do this easily by right-clicking on the filename in the file’s tab (see the image below)\n\n\n\n🐍 <b>Note:</b>Make sure you save your file with the <code>.py</code> extension and not <code>.txt</code>. You will know if you saved it correctly if the file appears with python code formating as in the image below:\n\n\n\nSave the new file. This will create a file called temperature.py in your current directory.\n\n\n\nImporting your class from the temperature.py file.\nAssuming you were able to save your file correctly, and that your Temperature class definition doesn’t have any errors in it, you can import the Temperature class into your notebook like this:\n\nfrom temperature import Temperature\n\nT = Temperature(98.6, unit='F')\n\n✏️ <b> Try it. </b>  \nLoad your <code>Temperature</code> class from the <code>temperature.py</code> file using the <code>import</code> command. Make some new Temperature instances to ensure that your class loaded correctly and works okay."
+  },
+  {
+    "objectID": "Setting_up_local.html",
+    "href": "Setting_up_local.html",
+    "title": "Setting up your local Python",
+    "section": "",
+    "text": "Return to Course Home Page"
+  },
+  {
+    "objectID": "Setting_up_local.html#general-plan",
+    "href": "Setting_up_local.html#general-plan",
+    "title": "Setting up your local Python",
+    "section": "General Plan",
+    "text": "General Plan\nThere are many ways to set up your local machine to run maintanable python data science code. In addition to the usual need to build your code within a repository, any strategy for local computation requires three critical components:\n\nA system for managing computing environments\nA system for managing python packages\nAn system for managing python code, which is usually an integrated development environment (IDE) in which editing and running code occur interactively."
+  },
+  {
+    "objectID": "Setting_up_local.html#managing-computing-environments",
+    "href": "Setting_up_local.html#managing-computing-environments",
+    "title": "Setting up your local Python",
+    "section": "1. Managing Computing Environments",
+    "text": "1. Managing Computing Environments\nThere are many options for managing computing environments.\nThese days, a common method is to use containers, in which an entire computational system (including processes, memory, disk space) is spun up as an isolated service on your local (or remote). Systems such as docker or python-specific shiv allow for isolated packaging and execution of python programs.\nA more common approach on local machines is to use the condaenvironment management system. Conda is developed by Anaconda, and is the most widely used environment management system in python data science. Other local solutions include venv, which is part of the main python distribution.\nIn this exercise, we will use conda for our environment management. We can access conda through the terminal/command line, within a terminal inside an IDE, or through the Anaconda Navigator app."
+  },
+  {
+    "objectID": "Setting_up_local.html#managing-python-packages",
+    "href": "Setting_up_local.html#managing-python-packages",
+    "title": "Setting up your local Python",
+    "section": "2. Managing Python Packages",
+    "text": "2. Managing Python Packages\nOnce a computing environment is created in conda, there is a need to manage the individual packages within the environment. Once again, there are many ways to accomplish this task in python.\nFirstly, conda itself is a sophisticated package management system too. conda is able to download and install almost any python package and often it is possible to install binaries of packages directly without the need for local compilation. conda also manages package dependencies, ensuring libraries are inter-operable.\nIn addition to conda, there is the Package Installer for Python pip. pip can install any package hosted on the Python Package Index (PyPI), as well as packages hosted on github and even packages you’ve made on your local machine.\nRecently, a new entry to package management, poetry has started to become popular. poetry focuses on making package management - and especially dependency management between and amongst packages - much easier. It also simplifies building and packaging your own code for distribution.\nIn this class, we will use conda for our package management. Because conda also includes pip, we get all the advantages of conda (faster installs, easy integration with IDEs) without losing the broad capabilities of pip.\nConda can create new environments using a markup language specification called yaml. We will use an environment file created for our course to create an eds-217 environment on your local machine."
+  },
+  {
+    "objectID": "Setting_up_local.html#installing-the-eds-217-python-environment.",
+    "href": "Setting_up_local.html#installing-the-eds-217-python-environment.",
+    "title": "Setting up your local Python",
+    "section": "Installing the EDS-217 Python Environment.",
+    "text": "Installing the EDS-217 Python Environment.\n\nUsing Anaconda NavigatorUsing conda at the command line\n\n\n\nSave this environment.yml file to your local machine (right-click to Save As).\nOpen Anaconda Navigator and click into the Environments pane on the left side of the Navigator window.\nIn the Environments pane, click the Import button at the bottom of the environments list.\nUse the file chooser to select the environment.yml file that you just downloaded. Make sure to enter eds-217 in the \"New environment name\" field of the Import Environment dialog panel.\nOnce the environment is installed, you are all set! You can close out of the Anaconda Navigator.\n\nNote: If you ever need to add libraries to this environment, you can use the same interface to install additional python modules.\n\n\n\nSave this environment.yml file to your local machine (right-click to Save As).\nOpen a terminal. This can be done either through RStudio, or using an installed terminal application in Mac OS or Windows.\nIn the terminal, cd (change directory) to the folder containing the environment.yml file that you downloaded in step 1.\nuse the conda command to create a new environment based on the specifications of the environment.yml file:\n\n> conda env create -f environment.yml\nNote: If you ever need to add libraries to this environment at the command line, you can use the conda command. First, make sure that you have activated the environment using:\n> conda activate eds-217\nThen you can install additional libraries using:\n> conda install <package_name>\nwhere <package_name> is the name of the library you want to install (it may not match the name of the import exactly, so be sure to search on Google for the correct import statement)"
+  },
+  {
+    "objectID": "Setting_up_local.html#managing-code-and-execution-ides",
+    "href": "Setting_up_local.html#managing-code-and-execution-ides",
+    "title": "Setting up your local Python",
+    "section": "3. Managing code and execution (IDEs)",
+    "text": "3. Managing code and execution (IDEs)\nFinally, we come to the tool you will use most when coding on your local computer – the Integrated Development Environment, or IDE. The possibilities for IDEs is even more expansive than for either of the other tools. Common python IDEs include:\n\nVisual Studio Code\nJupyter Notebooks\nJupyter Labs\nSpyder\nPyCharm\nData Spell\nAtom\nRStudio\n\nAny of these would work well for a python data science workflow, but definitely some have more features focused on data science than others. For example, PyCharm is more focused on software engineering, but a new IDE called Data Spell, by the same company (Jet Brains), is squarely centered on data science workflows.\nThe best IDE is usually the one you are most familiar with. For that reason, RStudio isn’t a bad choice for an IDE. Although you will only be able to write code in quarto (.qmd) files, RStudio will be sufficient for many of your python needs.\nHowever, if you need to edit .ipynb files natively (without conversion to .py or .qmd), you will probably want to use an IDE that is designed to efficiently parse these files and allow you to execute code directly.\nWe’ve been using Jupyter (both notebooks and lab) this class, and you can continue to do so on your local machine. However, it’s probably best to use a non-browser IDE if possible, since that will provide more opportunities for customization and removes a layer of complication required when executing your code.\nToday we will look at both RStudio (for .qmd files) and Visual Studio Code (VSCode).\nHaving covered all the bases, we need to go ahead and get to work. Here are the steps for getting our class environment working on your machine, and within your IDE."
+  },
+  {
+    "objectID": "Setting_up_local.html#using-the-eds-217-environment.",
+    "href": "Setting_up_local.html#using-the-eds-217-environment.",
+    "title": "Setting up your local Python",
+    "section": "Using the eds-217 environment.",
+    "text": "Using the eds-217 environment.\nThe conda manager tool will keep track of all the different environments you have created, and the packages installed in each of them. At any time, you can inspect all of your installed environments and their libraries using the Anaconda Navigator, or using the conda env list command.\nWhen you are using an IDE you will often be given the opportunity to connect an environment with your code.\nIn RStudio, this happens when you create a new .qmd file and associate it with a jupyter installation.\nIn Visual Studio Code, you can select an environment when you first execute a .ipynb file or when you initiate an IPython interactive terminal.\nYou can always activate an environment at a terminal prompt by using\n> conda activate <environment_name>\nIn the case of eds-217, you would use:\n> conda activate eds-217"
   }
 ]
