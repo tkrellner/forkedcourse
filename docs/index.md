@@ -3,7 +3,7 @@
 
 ## Python for Environmental Data Science
 
-![code_screen.jpg](images/code_screen.jpg)
+![Some python code](images/code_screen.png)
 
 These notebooks provide an introduction to the Python programming language, the major libraries associated with the python data science stack, and opportunities to explore applications of python to environmental data science via analysis of rainfall variability, the development of stochastic models for daily rainfall in tropical drylands, investigation of water balance, and landscape energy balance.
 
@@ -19,13 +19,8 @@ The module assumes no prior experience with python, pandas, or jupyter notebooks
 
 ### Course Outline
 
-#### New For Week 2: TryPy
 
-To create more open-ended opportunities for you to apply your python skills, I’ve ported over some exercises from EDS221. They are *essentially* the same, but now you will work on solving the problems using Python instead of R.
-
-[**TryPy Exercises**](TryPy/TryPy.html)
-
-#### Day 1 - Introduction to Python
+#### Day 1 - Setting up your Python Environment
 
 The materials for Day 1 are designed to introduce the basics of working with Python.
 
@@ -93,3 +88,10 @@ Here are a couple more advanced - and interactive - examples of environmental da
 ---
 
 Note: This conversion is a direct representation of the HTML content into Markdown. Some elements, like styles and scripts, have been omitted as they are not directly translatable to Markdown.
+
+
+#### New For Week 2: TryPy
+
+To create more open-ended opportunities for you to apply your python skills, I’ve ported over some exercises from EDS221. They are *essentially* the same, but now you will work on solving the problems using Python instead of R.
+
+[**TryPy Exercises**](TryPy/TryPy.html)
