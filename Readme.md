@@ -1,10 +1,10 @@
 
 # Python for Environmental Data Science
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/environmental-data-science/eds-217/main?labpath=exercises%2Findex.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/environmental-data-science/eds217_2023/main?labpath=index.ipynb)
 
 
 
-## [Course Website](https://bit.ly/eds-217)
+## [Course Website](https://bit.ly/eds217_2023)
 
 
 Course Description
