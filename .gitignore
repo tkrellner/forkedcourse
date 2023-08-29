@@ -3,3 +3,5 @@
 exercises/_answerkeys
 .DS_Store
 2022_docs/
+.quarto/
+__pycache__/
