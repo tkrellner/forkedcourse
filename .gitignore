@@ -5,3 +5,5 @@ exercises/_answerkeys
 2022_docs/
 .quarto/
 __pycache__/
+
+/.quarto/
