@@ -7,6 +7,7 @@ project:
     - "lectures/"
     - "resources/"
     - "exercises/"
+    - "trypy/"
     - "interactive_sessions/"
     - "!2022_docs/"
 
