@@ -3,12 +3,12 @@ project:
   type: website
   output-dir: docs
   render:
-    - "!2022_docs/"
+    - "/index.ipynb"
     - "lectures/"
     - "resources/"
     - "exercises/"
     - "interactive_sessions/"
-    - "index.ipynb"
+    - "!2022_docs/"
 
 format:
   html:
