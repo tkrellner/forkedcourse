@@ -19,3 +19,6 @@ format:
     toc-location: left
     css: styles/activities.css
     include-before-body: header.html
+
+execute:
+  freeze: auto
