@@ -882,6 +882,13 @@
     "text": "Deleting a cell\nYou can delete a cell by clicking the scissors button in the toolbar. This will delete the currently selected cell. There is also a trashcan icon in the cell toolbar that will delete the cell. Finally, you can also use the keyboard shortcut D,D (press D twice).\nPractice adding, deleting, and changing the type of cells until you are comfortable with the process"
   },
   {
+    "objectID": "interactive_sessions/interactive_sessions.html",
+    "href": "interactive_sessions/interactive_sessions.html",
+    "title": "EDS 217: Python for Environmental Data Science",
+    "section": "",
+    "text": "Return to Course Home Page\n\n\n\n\n\n\nCode\n# Interactive Sessions"
+  },
+  {
     "objectID": "interactive_sessions/00_ready_set_python.html#general-plan",
     "href": "interactive_sessions/00_ready_set_python.html#general-plan",
     "title": "Interactive Session 0: Getting ready to Python",
