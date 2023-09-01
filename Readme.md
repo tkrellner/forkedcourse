@@ -6,7 +6,7 @@
 Course Website
 ==================
 
-The course description, learning goals, format, and outline with links to all activities can be found at the [course Website](https://bit.ly/eds217_2023)
+The course description, learning goals, format, and outline with links to all activities can be found at the [course Website](https://bit.ly/eds217_2023). 
 
 How to use this repository
 =============
