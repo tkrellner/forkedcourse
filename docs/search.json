@@ -644,6 +644,48 @@
     "text": "📚  Practice 10. \n\n\nRaise array b to the power of array c.\n\n\nCreate a new 5x10 array of random values. Subtract the mean of each row from every value.\n\n\n\n\nCode\n# a. \nb ** c\n\n# b. \n# Random 5x10 array\nrand50 = np.random.rand(5, 10)\n\n# Calculate mean of each row\nm = np.array([rand50.mean(axis=1)])\n# Subtract mean from each element\nl = rand50 - m.T\nprint(l)\n\n\n[[-0.41170877  0.15229157  0.34946892  0.2381375  -0.0113315   0.13161321\n  -0.1760515  -0.36044148 -0.12893971  0.21696174]\n [ 0.40968579  0.15228368  0.20724049 -0.33369976 -0.02910147 -0.4137152\n   0.06196756  0.17497702 -0.33630459  0.10666647]\n [-0.37876503  0.19540316  0.41508675 -0.39110682  0.25720744  0.11413381\n  -0.26093547 -0.22328425 -0.10556412  0.37782455]\n [ 0.21099536 -0.14109065  0.19566946  0.11854273 -0.44249867 -0.1864767\n   0.04331053 -0.16904161  0.06026488  0.31032467]\n [ 0.38219275  0.1848438   0.00265078  0.33216692 -0.39019945  0.02188796\n   0.01753881 -0.28219403 -0.24254002 -0.02634752]]"
   },
   {
+    "objectID": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html",
+    "href": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "",
+    "text": "Don’t forget to start your notebook with a cell containing the import statements you need for the session.\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates"
+  },
+  {
+    "objectID": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-1.",
+    "href": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-1.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 1. ",
+    "text": "📚  Practice 1. \nRecreate the plot below. You do not need to match the colors exactly, but do not rely on matplotlib defaults. Note: do not worry about the equation(s); these are included to indicate which functions to plot.\n\n\n\nCode\n# Plot y=log(x) in green\nx = np.linspace(.01, 1, 100)\ny = np.log(x)\nfig, ax = plt.subplots()\nax.plot(x, y, 'g-')\nax.set_title('y=log(x)')\nax.set_xlabel('x')\nax.set_ylabel('y')\nplt.show()"
+  },
+  {
+    "objectID": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-2.",
+    "href": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-2.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 2. ",
+    "text": "📚  Practice 2. \nRecreate the plot below. You do not need to match the colors exactly, but do not rely on matplotlib defaults. Note: do not worry about the equation(s); these are included to indicate which functions to plot.\n\n\n\nCode\n# Plot a series of three sine waves, with amplitudes 1, 10, and 5, in different colors from 0-10\n\n\n(1.0, 0.0, 0.0)\n\n\n\n\nCode\ndef rgb(r, g, b):\n    return (r/255, g/255, b/255)\n\nx = np.linspace(0, 10, 100)\ny1 = 1 * x* np.sin(2*np.pi*x)\ny2 = 10 * x * np.sin(2*np.pi*x)\ny3 = 5 * x * np.sin(2*np.pi*x)\nfig, ax = plt.subplots(figsize=(10, 6))\nax.plot(x, y1, '-', label='A=1', marker='o', color=rgb(83,127,232))\nax.plot(x, y2, '--', label='A=10', marker='*', color=rgb(97,180,186))\nax.plot(x, y3, '-.', label='A=5', marker='^', color=rgb(205,61,62))\n# add markers to the plot\nax.set_title('y=Axsin(2$\\pi$x)')\nax.set_xlabel('x')\nax.set_ylabel('y')\nax.legend()\nplt.show()"
+  },
+  {
+    "objectID": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-3.",
+    "href": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-3.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 3. ",
+    "text": "📚  Practice 3. \nImport the data from ./data/BSRN_data.csv and plot the temperature and relative humidity over the month of October 2019 at the BSRN station. Be sure to format the timestamps and include axis labels, a title, and a legend, if necessary.\n\n\nCode\n# Import data\nbsrn = pd.read_csv('../data/BSRN_GOB_2019-10.csv',index_col=0,parse_dates=True)\n\n\n\n\nCode\n\n# Initialize empty figure and axes\nfig = plt.figure(figsize=(8,8))\n# Create two subplots in a 1x2 grid:\n# 1. Incoming SW radiation\n# 2. Incoming LW radiation\nax1 = fig.add_subplot(2,1,1)\nax2 = fig.add_subplot(2,1,2)\n\n# Filter data for October 2019:\nbsrn = bsrn.loc['2019-10-01':'2019-10-31']\n# Plot incoming SW radiation for October 2019:\nax1.plot(bsrn.index,bsrn.SWD_Wm2)\n# Plot incoming LW radiation\nax2.plot(bsrn.index,bsrn.LWD_Wm2)\n# Label y-axes\nax1.set_ylabel(\"Incoming SW  \\n (W m$^{-2}$)\")\nax2.set_ylabel(\"Incoming LW  \\n (W m$^{-2}$)\")\n# Format timestamps\nax1.xaxis.set_major_formatter(mdates.DateFormatter('%d-%b-%y'))\nax2.xaxis.set_major_formatter(mdates.DateFormatter('%d-%b-%y'))\n# Format and rotate ticks\nplt.setp(ax1.get_xticklabels(), rotation=45, fontsize=10, ha='right')\nplt.setp(ax2.get_xticklabels(), rotation=45, fontsize=10, ha='right')\n# Label x-axes\nax1.set_xlabel('Date')\nax2.set_xlabel('Date')\n# Set figure title\nfig.suptitle('Incoming SW and LW radiation at BSRN station Gobabeb, Namibia')\n# Show figure\nfig.tight_layout()\nplt.show()"
+  },
+  {
+    "objectID": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-4.",
+    "href": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-4.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚 Practice 4.",
+    "text": "📚 Practice 4.\nSaturation vapor pressure, ( $ e^*(T_a) $ ), is the maximum pressure of water vapor that can exist in equilibrium above a flat plane of water at a given temperature. It can be calculated from the Tetens equation:\n e^{*}(T_{a}) = a \\times exp({\\frac{b \\cdot T_{a}}{T_{a} + c}}) \nwhere $ T_a $ is the air temperature in °C, $ a = 0.611 $ kPa, $ b = 17.502 $, and $ c = 240.97 °C $.\n\nCalculate ( $ e^*(T_a) $ ) in kPa for all temperatures in bsrn.\nPlot temperature vs. saturation vapor pressure for the BSRN station. Be sure to format your plot appropriately and include axis labels, a title, and a legend, if necessary.\nCompare your plot to Figure 3-1 in Campbell and Norman (1998). Do they look more or less the same?\n\n\n\nCode\n\n# 1. Calculate saturation vapor pressure in kPa for a T_degC column in bsrn and assign it to a new column 'e_sat_kPa' \nimport numpy as np\nbsrn['e_sat_kPa'] = 0.611 * np.exp((17.502 * bsrn.T_degC) / (bsrn.T_degC + 240.97))\n\n# 2. Create a scatterplot of temperature versus stauration vapor pressure. Be sure to format the x-axis ticks as dates.\nfig = plt.figure(figsize=(8,8))\nax = fig.add_subplot(1,1,1)\nplt.scatter(bsrn.T_degC,bsrn.e_sat_kPa)\n# set xlabel\nax.set_xlabel('Temperature (°C)')\n# set ylabel\nax.set_ylabel('Saturation vapor pressure (kPa)')\n# set title\nax.set_title('Saturation vapor pressure as a function of temperature')\n\n# show the figure\nplt.show()"
+  },
+  {
+    "objectID": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-5.",
+    "href": "practice_sessions/answerkeys/practice_5-1_matplotlib_key.html#practice-5.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 5. ",
+    "text": "📚  Practice 5. \nThe difference between saturation vapor pressure and ambient air pressure is called vapor pressure deficit, \\textit{VPD}. \\textit{VPD} can be calculated from saturation vapor pressure and relative humidity, h_r, as follows:  \\textit{VPD} \\, = \\, e^*(T_a) \\cdot (1 \\, - \\, h_r) where h_r is expressed as a fraction.\n\nCalculate the vapor pressure deficit for the BSRN data.\nCalculate the mean hourly e^*(T_a) and \\textit{VPD} over the entire month.\nPlot e^*(T_a) and \\textit{VPD} as a function of time of day. (for extra python points, try plotting both variables on one plot using ax.twinx())\nHow does relative humidity vary throughout the day? Why?\nCompare your plot(s) to Figure 3-3 in Campbell and Norman (1998). How do the values of e^*(T_a) and \\textit{VPD} for the BSRN station compare to those at constant vapor pressure in Figure 3-3?\n\n\n\nCode\n# Calulate VPD in kPa for bsrn data:\nbsrn['VPD_kPa'] = bsrn.e_sat_kPa * (1 - bsrn.RH/100)\n\n# For each hour in the day, calculate the monthly means\nbsrn_hourly = bsrn.groupby(bsrn.index.hour).mean()\n\n# plot the hourly means of VPD and e_sat_kPa. Use ax.twinx() to plot both variables on the same axes.\nfig = plt.figure(figsize=(8,8))\nax = fig.add_subplot(1,1,1)\nax2 = ax.twinx()\nax.plot(bsrn_hourly.index,bsrn_hourly.VPD_kPa,color='red')\nax2.plot(bsrn_hourly.index,bsrn_hourly.e_sat_kPa,color='blue')\n# set xlabel\nax.set_xlabel('Hour of day')\n# set ylabel\nax.set_ylabel('VPD (kPa)',color='red')\nax2.set_ylabel('Saturation vapor pressure (kPa)',color='blue')\n# set title\nax.set_title('Hourly means of VPD and saturation vapor pressure')\n# show the figure\n\n\n\n\nText(0.5, 1.0, 'Hourly means of VPD and saturation vapor pressure')"
+  },
+  {
     "objectID": "practice_sessions/answerkeys/practice_4-1_pandas_key.html#practice-1.",
     "href": "practice_sessions/answerkeys/practice_4-1_pandas_key.html#practice-1.",
     "title": "Practice 4-1: Pandas 🐼",
@@ -824,6 +866,48 @@
     "title": "Practice 3-1: Introduction to NumPy",
     "section": "📚  Practice 10. ",
     "text": "📚  Practice 10. \n\n\nRaise array b to the power of array c.\n\n\nCreate a new 5x10 array of random values. Subtract the mean of each row from every value.\n\n\n\n\nCode\n# a. \nb ** c\n\n# b. \n# Random 5x10 array\nrand50 = np.random.rand(5, 10)\n\n# Calculate mean of each row\nm = np.array([rand50.mean(axis=1)])\n# Subtract mean from each element\nl = rand50 - m.T\nprint(l)\n\n\n[[-0.41170877  0.15229157  0.34946892  0.2381375  -0.0113315   0.13161321\n  -0.1760515  -0.36044148 -0.12893971  0.21696174]\n [ 0.40968579  0.15228368  0.20724049 -0.33369976 -0.02910147 -0.4137152\n   0.06196756  0.17497702 -0.33630459  0.10666647]\n [-0.37876503  0.19540316  0.41508675 -0.39110682  0.25720744  0.11413381\n  -0.26093547 -0.22328425 -0.10556412  0.37782455]\n [ 0.21099536 -0.14109065  0.19566946  0.11854273 -0.44249867 -0.1864767\n   0.04331053 -0.16904161  0.06026488  0.31032467]\n [ 0.38219275  0.1848438   0.00265078  0.33216692 -0.39019945  0.02188796\n   0.01753881 -0.28219403 -0.24254002 -0.02634752]]"
+  },
+  {
+    "objectID": "practice_sessions/practice_5-1_matplotlib.html",
+    "href": "practice_sessions/practice_5-1_matplotlib.html",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "",
+    "text": "⬅️ Previous Session | 🏠 Course Home\nDon’t forget to start your notebook with a cell containing the import statements you need for the session.\nCode\nimport pandas as pd\nimport matplotlib.pyplot as plt\nimport matplotlib.dates as mdates"
+  },
+  {
+    "objectID": "practice_sessions/practice_5-1_matplotlib.html#practice-1.",
+    "href": "practice_sessions/practice_5-1_matplotlib.html#practice-1.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 1. ",
+    "text": "📚  Practice 1. \nRecreate the plot below. You do not need to match the colors exactly, but do not rely on matplotlib defaults. Note: do not worry about the equation(s); these are included to indicate which functions to plot."
+  },
+  {
+    "objectID": "practice_sessions/practice_5-1_matplotlib.html#practice-2.",
+    "href": "practice_sessions/practice_5-1_matplotlib.html#practice-2.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 2. ",
+    "text": "📚  Practice 2. \nRecreate the plot below. You do not need to match the colors exactly, but do not rely on matplotlib defaults. Note: do not worry about the equation(s); these are included to indicate which functions to plot."
+  },
+  {
+    "objectID": "practice_sessions/practice_5-1_matplotlib.html#practice-3.",
+    "href": "practice_sessions/practice_5-1_matplotlib.html#practice-3.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 3. ",
+    "text": "📚  Practice 3. \nImport the data from ./data/BSRN_data.csv and plot the temperature and relative humidity over the month of October 2019 at the BSRN station. Be sure to format the timestamps and include axis labels, a title, and a legend, if necessary."
+  },
+  {
+    "objectID": "practice_sessions/practice_5-1_matplotlib.html#practice-4.",
+    "href": "practice_sessions/practice_5-1_matplotlib.html#practice-4.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚 Practice 4.",
+    "text": "📚 Practice 4.\nSaturation vapor pressure, ( $ e^*(T_a) $ ), is the maximum pressure of water vapor that can exist in equilibrium above a flat plane of water at a given temperature. It can be calculated from the Tetens equation:\n e^{*}(T_{a}) = a \\times exp({\\frac{b \\cdot T_{a}}{T_{a} + c}}) \nwhere $ T_a $ is the air temperature in °C, $ a = 0.611 $ kPa, $ b = 17.502 $, and $ c = 240.97 °C $.\n\nCalculate ( $ e^*(T_a) $ ) in kPa for all temperatures in bsrn.\nPlot temperature vs. saturation vapor pressure for the BSRN station. Be sure to format your plot appropriately and include axis labels, a title, and a legend, if necessary.\nCompare your plot to Figure 3-1 in Campbell and Norman (1998). Do they look more or less the same?"
+  },
+  {
+    "objectID": "practice_sessions/practice_5-1_matplotlib.html#practice-5.",
+    "href": "practice_sessions/practice_5-1_matplotlib.html#practice-5.",
+    "title": "Session 5-1: Matplotlib 📈",
+    "section": "📚  Practice 5. ",
+    "text": "📚  Practice 5. \nThe difference between saturation vapor pressure and ambient air pressure is called vapor pressure deficit, \\textit{VPD}. \\textit{VPD} can be calculated from saturation vapor pressure and relative humidity, h_r, as follows:  \\textit{VPD} \\, = \\, e^*(T_a) \\cdot (1 \\, - \\, h_r) where h_r is expressed as a fraction.\n\nCalculate the vapor pressure deficit for the BSRN data.\nCalculate the mean hourly e^*(T_a) and \\textit{VPD} over the entire month.\nPlot e^*(T_a) and \\textit{VPD} as a function of time of day. (for extra python points, try plotting both variables on one plot using ax.twinx())\nHow does relative humidity vary throughout the day? Why?\nCompare your plot(s) to Figure 3-3 in Campbell and Norman (1998). How do the values of e^*(T_a) and \\textit{VPD} for the BSRN station compare to those at constant vapor pressure in Figure 3-3?"
   },
   {
     "objectID": "practice_sessions/practice_1-2_lists.html",

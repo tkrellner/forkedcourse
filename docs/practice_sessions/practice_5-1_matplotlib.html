@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>EDS 217: Python for Environmental Data Science - Practice 4-1: Pandas 🐼</title>
+<title>EDS 217: Python for Environmental Data Science - Session 5-1: Matplotlib 📈</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -125,15 +125,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#practice-1." id="toc-practice-1." class="nav-link active" data-scroll-target="#practice-1.">📚 <b> Practice 1. </b></a></li>
-  <li><a href="#import-the-data-for-our-practice-session" id="toc-import-the-data-for-our-practice-session" class="nav-link" data-scroll-target="#import-the-data-for-our-practice-session">Import the data for our practice session</a></li>
-  <li><a href="#practice-2.-using-the-dataframe-bsrn" id="toc-practice-2.-using-the-dataframe-bsrn" class="nav-link" data-scroll-target="#practice-2.-using-the-dataframe-bsrn">📚 Practice 2. Using the DataFrame <code>bsrn</code>:</a></li>
-  <li><a href="#practice-3." id="toc-practice-3." class="nav-link" data-scroll-target="#practice-3.">📚 Practice 3.</a></li>
-  <li><a href="#practice-4." id="toc-practice-4." class="nav-link" data-scroll-target="#practice-4.">📚 <b> Practice 4.</b></a></li><b>
+  <li><a href="#practice-2." id="toc-practice-2." class="nav-link" data-scroll-target="#practice-2.">📚 <b> Practice 2. </b></a></li>
+  <li><a href="#practice-3." id="toc-practice-3." class="nav-link" data-scroll-target="#practice-3.">📚 <b> Practice 3. </b></a></li>
+  <li><a href="#practice-4." id="toc-practice-4." class="nav-link" data-scroll-target="#practice-4.">📚 Practice 4.</a></li>
   <li><a href="#practice-5." id="toc-practice-5." class="nav-link" data-scroll-target="#practice-5.">📚 <b> Practice 5. </b></a></li>
-  <li><a href="#practice-6." id="toc-practice-6." class="nav-link" data-scroll-target="#practice-6.">📚 <b> Practice 6. </b></a></li>
-  <li><a href="#practice-7." id="toc-practice-7." class="nav-link" data-scroll-target="#practice-7.">📚 <b> Practice 7. </b></a></li>
-  </b></ul><b>
-</b></nav>
+  </ul>
+</nav>
 </nav>
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
@@ -147,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Practice 4-1: Pandas 🐼</h1>
+<h1 class="title">Session 5-1: Matplotlib 📈</h1>
 </div>
 
 
@@ -161,292 +158,65 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   
 
 </header>
-<b>
-<p><a href="../practice_sessions/practice_3-1_numpy.html">⬅️ Previous Session</a> | <a href="../index.html">🏠 Course Home</a> | <a href="../practice_sessions/practice_5-1_matplotlib.html">➡️ Next Session</a> |</p>
-<div class="cell" data-execution_count="4">
+
+<p><a href="../practice_sessions/practice_4-1_pandas.html">⬅️ Previous Session</a> | <a href="../index.html">🏠 Course Home</a></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./assets/mpl.png" class="img-fluid figure-img"></p>
+<figcaption class="figure-caption">mpl</figcaption>
+</figure>
+</div>
+<p><strong>Don’t forget to start your notebook with a cell containing the import statements you need for the session.</strong></p>
+<div class="cell" data-execution_count="1">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.dates <span class="im">as</span> mdates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <section id="practice-1." class="level2">
 <h2 class="anchored" data-anchor-id="practice-1.">📚 <b> Practice 1. </b></h2>
-<ol class="alpha">
-<li>
-Use a list of lists to construct a DataFrame named <code>df1</code> containing the data in the table below.
-</li>
-<table class="table">
-<thead>
-<tr class="header">
-<th>River</th>
-<th>Length <span class="math inline">(\text{km})</span></th>
-<th>Drainage area <span class="math inline">(\text{km}^2)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Amazon</td>
-<td>6400</td>
-<td>7,050,000</td>
-</tr>
-<tr class="even">
-<td>Congo</td>
-<td>4371</td>
-<td>4,014,500</td>
-</tr>
-<tr class="odd">
-<td>Yangtze</td>
-<td>6418</td>
-<td>1,808,500</td>
-</tr>
-<tr class="even">
-<td>Mississippi</td>
-<td>3730</td>
-<td>3,202,230</td>
-</tr>
-</tbody>
-</table>
-<br>
-<li>
-Use a <code>dict</code> to construct a DataFrame named <code>df2</code> containing the data in the table below.
-</li>
-<table class="table">
-<thead>
-<tr class="header">
-<th>River</th>
-<th>Length <span class="math inline">(\text{km})</span></th>
-<th>Drainage area <span class="math inline">(\text{km}^2)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Zambezi</td>
-<td>2574</td>
-<td>1,331,000</td>
-</tr>
-<tr class="even">
-<td>Mekong</td>
-<td>4023</td>
-<td>811,000</td>
-</tr>
-<tr class="odd">
-<td>Murray</td>
-<td>2508</td>
-<td>1,061,469</td>
-</tr>
-<tr class="even">
-<td>Rhône</td>
-<td>813</td>
-<td>98,000</td>
-</tr>
-<tr class="odd">
-<td>Cubango</td>
-<td>1056</td>
-<td>530,000</td>
-</tr>
-</tbody>
-</table>
-<br>
-</ol>
+<p>Recreate the plot below. You do not need to match the colors exactly, but do not rely on <span class="codeb">matplotlib</span> defaults. Note: do not worry about the equation(s); these are included to indicate which functions to plot.</p>
+<p><img src="./assets/mpl_prac1.png" alt="prac1" width="600"></p>
 </section>
-<section id="import-the-data-for-our-practice-session" class="level2">
-<h2 class="anchored" data-anchor-id="import-the-data-for-our-practice-session">Import the data for our practice session</h2>
-<div class="cell" data-execution_count="5">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Import data</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>bsrn <span class="op">=</span> pd.read_csv(<span class="st">'../data/BSRN_GOB_2019-10.csv'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
-</section>
-<section id="practice-2.-using-the-dataframe-bsrn" class="level2">
-<h2 class="anchored" data-anchor-id="practice-2.-using-the-dataframe-bsrn">📚 Practice 2. Using the DataFrame <code>bsrn</code>:</h2>
-<ol>
-<li type="a">
-Print a list of column names.
-</li>
-<li type="a">
-How many values are there in the entire DataFrame?
-</li>
-<li type="a">
-What is the data type of the first column?
-</li>
-</ol>
+<section id="practice-2." class="level2">
+<h2 class="anchored" data-anchor-id="practice-2.">📚 <b> Practice 2. </b></h2>
+<p>Recreate the plot below. You do not need to match the colors exactly, but do not rely on <span class="codeb">matplotlib</span> defaults. Note: do not worry about the equation(s); these are included to indicate which functions to plot.</p>
+<p><img src="./assets/mpl_prac2.png" alt="prac2" width="600"></p>
 </section>
 <section id="practice-3." class="level2">
-<h2 class="anchored" data-anchor-id="practice-3.">📚 Practice 3.</h2>
-<ol class="alpha">
-<li>
-Create a new DataFrame containing the first record for each day and the following columns: the timestamp of the record, incoming shortwave radiation, direct and diffuse radiation, and incoming longwave radiation. (Hint: the BSRN station collects data every minute).
-</li>
-<li>
-Create a new Series containing the temperature values every hour at the top of the hour.
-</li>
-</ol>
-<div class="run">
-<pre><code>▶️ &lt;b&gt; Run the cell below. &lt;/b&gt;</code></pre>
-</div>
-<div class="cell" data-execution_count="6">
-<details>
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Convert bsrn.DATE column to datetime objects</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>bsrn[<span class="st">'DATE'</span>] <span class="op">=</span> pd.to_datetime(bsrn.DATE)  <span class="co"># Note: overwriting a column like this is NOT recommended.</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Set bsrn.DATE as the DataFrame index</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>bsrn.set_index(<span class="st">'DATE'</span>,inplace<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-</div>
+<h2 class="anchored" data-anchor-id="practice-3.">📚 <b> Practice 3. </b></h2>
+<p>Import the data from <code>./data/BSRN_data.csv</code> and plot the temperature and relative humidity over the month of October 2019 at the BSRN station. Be sure to format the timestamps and include axis labels, a title, and a legend, if necessary.</p>
 </section>
 <section id="practice-4." class="level2">
-<h2 class="anchored" data-anchor-id="practice-4.">📚 <b> Practice 4.</b></h2><b>
-</b><p><b></b> Calculate the mean incoming shortwave, outgoing shortwave, incoming longwave, and outgoing longwave radiation over the entire month.</p>
+<h2 class="anchored" data-anchor-id="practice-4.">📚 Practice 4.</h2>
+<p>Saturation vapor pressure, ( $ e^*(T_a) $ ), is the maximum pressure of water vapor that can exist in equilibrium above a flat plane of water at a given temperature. It can be calculated from the Tetens equation:</p>
+<p><span class="math display"> e^{*}(T_{a}) = a \times exp({\frac{b \cdot T_{a}}{T_{a} + c}}) </span></p>
+<p>where $ T_a $ is the air temperature in °C, $ a = 0.611 $ kPa, $ b = 17.502 $, and $ c = 240.97 °C $.</p>
+<ol type="1">
+<li>Calculate ( $ e^*(T_a) $ ) in kPa for all temperatures in <code>bsrn</code>.</li>
+<li>Plot temperature vs.&nbsp;saturation vapor pressure for the BSRN station. Be sure to format your plot appropriately and include axis labels, a title, and a legend, if necessary.</li>
+<li>Compare your plot to Figure 3-1 in Campbell and Norman (1998). Do they look more or less the same?</li>
+</ol>
 </section>
 <section id="practice-5." class="level2">
 <h2 class="anchored" data-anchor-id="practice-5.">📚 <b> Practice 5. </b></h2>
-<ol>
-<li type="a">
-Add a column <code style="font-weight:normal">‘NET_SW’</code> to <code style="font-weight:normal">bsrn</code> with the net shortwave radiation.
-</li>
-<li type="a">
-Add a column <code style="font-weight:normal">‘NET_LW’</code> to <code style="font-weight:normal">bsrn</code> with the net longwave radiation.
-</li>
-<li type="a">
-<p>Add a column <code style="font-weight:normal">‘NET_RAD’</code> to <code style="font-weight:normal">bsrn</code> with the net total radiation.</p>
-Net radiation is given by the following equation:
-</li>
-<p><span class="math display">R^{}_{N} \, = \,  R^{\, \downarrow}_{SW} \, - \,  R^{\, \uparrow}_{SW} \, + \, R^{\, \downarrow}_{LW} \, - \,  R^{\, \uparrow}_{LW}</span></p>
-<p>where <span class="math inline">R^{\, \downarrow}_{SW}</span> and <span class="math inline">R^{\, \uparrow}_{SW}</span> are incoming and outgoing shortwave radiation, respectively, and <span class="math inline">R^{\, \downarrow}_{LW}</span> and <span class="math inline">R^{\, \uparrow}_{LW}</span> are incoming and outgoing longwave radiation, respectively.</p>
-<li type="a">
-Create a new DataFrame with the day of the month and daily mean values of shortwave incoming, shortwave outgoing, longwave incoming, longwave outgoing radiation, and net total radiation. (Hint: use masking!).
-</li>
+<p>The difference between saturation vapor pressure and ambient air pressure is called vapor pressure deficit, <span class="math inline">\textit{VPD}</span>. <span class="math inline">\textit{VPD}</span> can be calculated from saturation vapor pressure and relative humidity, <span class="math inline">h_r</span>, as follows: <span class="math display"> \textit{VPD} \, = \, e^*(T_a) \cdot (1 \, - \, h_r)</span> where <span class="math inline">h_r</span> is expressed as a fraction.</p>
+<ol type="1">
+<li>Calculate the vapor pressure deficit for the BSRN data.</li>
+<li>Calculate the mean hourly <span class="math inline">e^*(T_a)</span> and <span class="math inline">\textit{VPD}</span> over the entire month.</li>
+<li>Plot <span class="math inline">e^*(T_a)</span> and <span class="math inline">\textit{VPD}</span> as a function of time of day. (for extra python points, try plotting both variables on one plot using <a href="https://matplotlib.org/stable/gallery/subplots_axes_and_figures/two_scales.html">ax.twinx()</a>)</li>
+<li>How does relative humidity vary throughout the day? Why?</li>
+<li>Compare your plot(s) to Figure 3-3 in Campbell and Norman (1998). How do the values of <span class="math inline">e^*(T_a)</span> and <span class="math inline">\textit{VPD}</span> for the BSRN station compare to those at constant vapor pressure in Figure 3-3?</li>
 </ol>
-</section>
-<section id="practice-6." class="level2">
-<h2 class="anchored" data-anchor-id="practice-6.">📚 <b> Practice 6. </b></h2>
-<ol class="alpha">
-<li>
-Concatenate <code>df1</code> and <code>df2</code> into a new DataFrame with all 9 rivers.
-</li>
-<li>
-Create a new DataFrame <code>rivers</code> with the discharge, mouth, source, and continent information and add this to your DataFrame from (a) to produce a DataFrame with all of the data in the table below.
-</li>
-</ol>
-<table class="table">
-<colgroup>
-<col style="width: 5%">
-<col style="width: 18%">
-<col style="width: 25%">
-<col style="width: 28%">
-<col style="width: 5%">
-<col style="width: 6%">
-<col style="width: 9%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>River</th>
-<th>Length <span class="math inline">(\text{km})</span></th>
-<th>Drainage area <span class="math inline">(\text{km}^2)</span></th>
-<th>Discharge <span class="math inline">(\text{m}^2/\text{s})</span></th>
-<th>Mouth</th>
-<th>Source</th>
-<th>Continent</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Amazon</td>
-<td>6400</td>
-<td>7,050,000</td>
-<td>209,000</td>
-<td>Atlantic Ocean</td>
-<td>Rio Mantaro</td>
-<td>South America</td>
-</tr>
-<tr class="even">
-<td>Congo</td>
-<td>4371</td>
-<td>4,014,500</td>
-<td>41,200</td>
-<td>Atlantic Ocean</td>
-<td>Lualaba River</td>
-<td>Africa</td>
-</tr>
-<tr class="odd">
-<td>Yangtze</td>
-<td>6418</td>
-<td>1,808,500</td>
-<td>30,166</td>
-<td>East China Sea</td>
-<td>Jianggendiru Glacier</td>
-<td>Asia</td>
-</tr>
-<tr class="even">
-<td>Mississippi</td>
-<td>3730</td>
-<td>3,202,230</td>
-<td>16,792</td>
-<td>Gulf of Mexico</td>
-<td>Lake Itasca</td>
-<td>North America</td>
-</tr>
-<tr class="odd">
-<td>Zambezi</td>
-<td>2574</td>
-<td>1,331,000</td>
-<td>3,400</td>
-<td>Indian Ocean</td>
-<td>Miombo Woodlands</td>
-<td>Africa</td>
-</tr>
-<tr class="even">
-<td>Mekong</td>
-<td>4023</td>
-<td>811,000</td>
-<td>16,000</td>
-<td>South China Sea</td>
-<td>Lasagongma Spring</td>
-<td>Asia</td>
-</tr>
-<tr class="odd">
-<td>Murray</td>
-<td>2508</td>
-<td>1,061,469</td>
-<td>767</td>
-<td>Southern Ocean</td>
-<td>Australian Alps</td>
-<td>Oceania</td>
-</tr>
-<tr class="even">
-<td>Rhône</td>
-<td>813</td>
-<td>98,000</td>
-<td>1,710</td>
-<td>Mediterranean Sea</td>
-<td>Rhône Glacier</td>
-<td>Europe</td>
-</tr>
-<tr class="odd">
-<td>Cubango</td>
-<td>1056</td>
-<td>530,000</td>
-<td>475</td>
-<td>Okavango Delta</td>
-<td>Bié Plateau</td>
-<td>Africa</td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="practice-7." class="level2">
-<h2 class="anchored" data-anchor-id="practice-7.">📚 <b> Practice 7. </b></h2>
-<p>Export your <code>rivers</code> DataFrame to a CSV file in the <code>exports</code> folder.</p>
 <hr style="border-top: 1px solid gray; margin-top: 24px; margin-bottom: 1px">
 
 
 
 </section>
 
-</b></main><b> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -680,8 +450,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-</b></div><b> <!-- /content -->
+</div> <!-- /content -->
 
 
 
-</b></body></html>
+</body></html>
