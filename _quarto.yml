@@ -6,7 +6,7 @@ project:
     - "/index.ipynb"
     - "lectures/"
     - "resources/"
-    - "exercises/"
+    - "practice_sessions/"
     - "trypy/"
     - "interactive_sessions/"
     - "group_project/"
