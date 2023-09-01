@@ -21,7 +21,7 @@ The course description, learning goals, format, and outline with links to all ac
 
 		**Note:** In the line above, the `$` is your terminal prompt. On other systems, the command prompt is something like `>`, or `[username]$`. To keep these directions more general, I will just use `$` to represent the command prompt throughout our docs. The key point is that you *don't* need to type this as part of the command.
 
-	* Press **Enter**. A local clone of the class repository will be created in your JupyterLab instance.
+	* Press **Enter**. A local clone of the class repository will be created on your local computer.
 
 		```
 		$ git clone https://github.com/<your username>/eds217_2023
