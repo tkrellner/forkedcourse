@@ -11,8 +11,6 @@ The course description, learning goals, format, and outline with links to all ac
 How to use this repository
 =============
 
-### If you are a student in EDS 217:
-
 1. Fork this repository to create a local copy in your github account. Do this by clicking the "Fork" button in the upper right corner of the [repository home page](https://github.com/environmental-data-science/eds217_2023/).
 
 1. Clone the forked repository to your local computer
