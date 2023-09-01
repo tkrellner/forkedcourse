@@ -59,22 +59,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 <link rel="stylesheet" href="styles/activities.css">
 </head>
@@ -154,8 +138,18 @@ ul.task-list li input[type="checkbox"] {
 <p>The module assumes no prior experience with python or jupyter notebooks.</p>
 <section id="learning-goals" class="level2">
 <h2 class="anchored" data-anchor-id="learning-goals">Learning Goals</h2>
-<p>(what you will be able to do) - Setup a python environment for data science using <code>conda</code>. - Conduct reproducible analyses within interactive <code>jupyter</code> notebook environments - Use the <code>VSCode</code> IDE to write and execute python notebooks as well as scripts. - Read and write basic-to-intermediate scripts and programs in the Python programming language - Perform analyses on structured data using <code>numpy</code> - Load, explore, aggregate, analyze, and display data using <code>pandas</code>. - Learn to visualize data using <code>matplotlib</code> and friends. - Use <code>scipy</code> functions to develop fits of distributions to empirical data - Apply all of these tools to analyze environmental datasets - Develop a short tutorial on how to use a python data science library for environmental analysis <span class="math inline">^*</span></p>
-<p><span class="math inline">^*</span> Final group presentation</p>
+<p>(what you will be able to do) - Setup a python environment for data science using <code>conda</code>.</p>
+<ul>
+<li><p>Conduct reproducible analyses within interactive <code>jupyter</code> notebook environments</p></li>
+<li><p>Use the <code>VSCode</code> IDE to write and execute python notebooks as well as scripts.</p></li>
+<li><p>Read and write basic-to-intermediate scripts and programs in the Python programming language</p></li>
+<li><p>Perform analyses on structured data using <code>numpy</code></p></li>
+<li><p>Load, explore, aggregate, analyze, and display data using <code>pandas</code>.</p></li>
+<li><p>Learn to visualize data using <code>matplotlib</code> and friends.</p></li>
+<li><p>Use <code>scipy</code> functions to develop fits of distributions to empirical data</p></li>
+<li><p>Apply all of these tools to analyze environmental datasets</p></li>
+<li><p>Develop a short tutorial on how to use a python data science library for environmental analysis</p></li>
+</ul>
 </section>
 </section>
 <section id="course-activities" class="level1">
@@ -231,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 <h4 class="anchored" data-anchor-id="morning-session-2">Morning Session</h4>
 <p><a href="./lectures/01_The_Zen_of_Python.html">The Zen of Python</a></p>
 <p>Our journey into Python’s Data Science toolkit begins with NumPy, a library designed to perform advanced calculations on matrices.</p>
-<p><a href="./exercises/Exercise2-1_Numpy.html">Session 2-1 - NumPy</a></p>
+<p><a href="exercises/Exercise2-1_Numpy.ipynb">Session 2-1 - NumPy</a></p>
 </section>
 <section id="afternoon-session-2" class="level4">
 <h4 class="anchored" data-anchor-id="afternoon-session-2">Afternoon Session</h4>

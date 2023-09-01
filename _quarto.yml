@@ -9,6 +9,7 @@ project:
     - "exercises/"
     - "trypy/"
     - "interactive_sessions/"
+    - "group_project/"
     - "!2022_docs/"
 
 format:
