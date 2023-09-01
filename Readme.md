@@ -1,15 +1,11 @@
 
 # Python for Environmental Data Science
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/environmental-data-science/eds217_2023/main?labpath=index.ipynb)
 
-
-Course Website
-==================
+## Course Website
 
 The course description, learning goals, format, and outline with links to all activities can be found at the [course website](https://bit.ly/eds217_2023). 
 
-How to use this repository
-=============
+## How to use this repository
 
 1. Fork this repository to create a local copy in your github account. Do this by clicking the "Fork" button in the upper right corner of the [repository home page](https://github.com/environmental-data-science/eds217_2023/).
 
