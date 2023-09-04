@@ -7,3 +7,4 @@ docs/
 .quarto/
 __pycache__/
 /.quarto/
+.vscode/
