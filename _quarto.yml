@@ -9,7 +9,7 @@ project:
     - "interactive_sessions/"
     - "group_project/"
     - "!2022_docs/"
-    - "!lectures/"
+    - "lectures/"
 
 format:
   html:
