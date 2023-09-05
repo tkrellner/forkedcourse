@@ -4,13 +4,12 @@ project:
   output-dir: docs
   render:
     - "/index.ipynb"
-    - "lectures/"
-    - "resources/"
     - "practice_sessions/"
     - "trypy/"
     - "interactive_sessions/"
     - "group_project/"
     - "!2022_docs/"
+    - "!lectures/"
 
 format:
   html:
