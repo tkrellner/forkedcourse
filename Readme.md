@@ -32,5 +32,12 @@ The course description, learning goals, format, and outline with links to all ac
 		> Unpacking objects: 100% (10/10), done.
 		```
 
-	     You will now have a new local directory in your instance called `eds217_2023/`, which contains all of the course materials. We will download and practice using all of the required software to use these course materials on Day 0 of the course. 
+	     You will now have a new local directory in your instance called `eds217_2023/`, which contains all of the course materials. We will download and practice using all of the required software to use these course materials on Day 0 of the course.
+
+ ## Course structure ideas for 2024: 
+
+ 1. Lists, numpy, plots with linspace & functions
+ 2. Dictionaries, dataframes, plots with actual data
+ 3. if/else statements and plots
+ 4. For loops and plots
 
