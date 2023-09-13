@@ -40,4 +40,5 @@ The course description, learning goals, format, and outline with links to all ac
  2. Dictionaries, dataframes, plots with actual data
  3. if/else statements and plots
  4. For loops and plots
+ 5. Functions??? Classes?????
 
